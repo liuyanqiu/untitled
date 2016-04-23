@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--
+     border:占空间
+    outline:不占用空间
+html属于结构  css属于表现
+
+    盒子模型 与（内容  内边距padding 外边距margiin 边框）有关
+    一、
+    标准模式（严格模式strictmode）：浏览器按w3c标准解析执行代码
+    怪异模式(兼容模式quirkmode)： 使用浏览器自己的方式解析执行代码
+        <!DOCTYPE html>           由于不同的浏览器解析执行的方式不一样，所以称之为怪异模式
+
+
+    二、如何检测当前的执行模式
+      alter(window.top.document.compatMode);
+      输出：css1compat  标准模式
+            backcompat  怪异模式
+
+     三、标准模式与怪异模式区别
+      标准模式：实际宽度=width+border+padding+margin
+      怪异模式(ie盒子模型)：实际宽度=width+margin
+       (?????)实际测试中ie678  实际宽度=width+border+margin
+
+        注意：ie6/ie7/ie8在怪异模式不会以此方式显示
+        其他高级浏览器在怪异模式下依然以标准模式显示
+
+     四、如何区分？
+        1、html5：有<!DOCTYPE html>表示为 标准模式
+        2、
+        （1）<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+        （2）<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN
+        http://www.w3.org/TR/html4/strict.dtd">
+         （3） <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN
+        http://www.w3.org/TR/html4/frameset.dtd">
+
+    忽略以上dtd的定义 即为怪异模式
+    -->
+    <style>
+        .d1{
+            width:600px;
+            height: 400px;
+            margin-top: 50px;
+            margin-left: 40px;
+            border:3px solid gainsboro;
+
+        }
+        .d2{
+            width:300px;
+            height: 150px;
+            border:10px solid #090909;
+            margin-left: 40px;
+            margin-top: 50px;
+            padding-left: 50px;
+            padding-top: 50px;
+        }
+    </style>
+    <script>
+        alter(window.top.document.compatMode);
+    </script>
+</head>
+<body>
+<div class="d1">
+    <div class="d2">hello student</div>
+</div>
+<a href="413(1).html" target="f4">链接4</a>
+</body>
+</html>
